@@ -43,6 +43,15 @@ const resolvers = {
     },
   },
 
+  Review: {
+    author(parent) {
+      return db.authors.find((author) => author.id === parent.auther_id);
+    },
+
+    game(parent) {
+      return db.games.find((game) => game.id === parent.auther_id);
+    },
+  },
 };
 
 // server setup
